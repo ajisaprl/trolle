@@ -1,15 +1,55 @@
-<h2>All Tasks</h2>
+<h2>To Do</h2>
 <p>
 <%= link_to 'New Task', new_task_path %>
 </p>
 <table>
 	<tr>
 		<th> Content </th>
+		<th> State </th>
 	</tr>
 
-	<% @tasks.each do |task| %>
+	<% @to_do.each do |task| %>
 		<tr>
 			<td><%= task.content %></td>
+			<td><%= task.state %></td>
+			<td><%= link_to 'Show ', task_path(task) %></td>
+			<td><%= link_to 'Edit', edit_task_path(task) %></td>
+			<td><%= link_to 'Delete', task_path(task), method: :delete, 
+			data: {confirm: "Are you sure want to delete this task?"} %></td>
+		</tr>
+	<% end %>
+</table>
+
+<h2>Doing</h2>
+<table>
+	<tr>
+		<th> Content </th>
+		<th> State </th>
+	</tr>
+
+	<% @doing.each do |task| %>
+		<tr>
+			<td><%= task.content %></td>
+			<td><%= task.state %></td>
+			<td><%= link_to 'Show ', task_path(task) %></td>
+			<td><%= link_to 'Edit', edit_task_path(task) %></td>
+			<td><%= link_to 'Delete', task_path(task), method: :delete, 
+			data: {confirm: "Are you sure want to delete this task?"} %></td>
+		</tr>
+	<% end %>
+</table>
+
+<h2>Done</h2>
+<table>
+	<tr>
+		<th> Content </th>
+		<th> State </th>
+	</tr>
+
+	<% @done.each do |task| %>
+		<tr>
+			<td><%= task.content %></td>
+			<td><%= task.state %></td>
 			<td><%= link_to 'Show ', task_path(task) %></td>
 			<td><%= link_to 'Edit', edit_task_path(task) %></td>
 			<td><%= link_to 'Delete', task_path(task), method: :delete, 
