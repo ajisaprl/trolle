@@ -58,6 +58,11 @@ GEM
       zeitwerk (~> 2.2)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    auto_html (2.0.0)
+      gemoji (~> 2.1)
+      redcarpet (~> 3.3)
+      rinku (~> 1.7)
+      tag_helper (~> 0.5)
     bcrypt (3.1.13)
     bindex (0.8.1)
     bootsnap (1.4.6)
@@ -87,6 +92,7 @@ GEM
     ffi (1.12.2)
     font-awesome-rails (4.7.0.5)
       railties (>= 3.2, < 6.1)
+    gemoji (2.1.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.8.2)
@@ -158,10 +164,12 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    redcarpet (3.5.0)
     regexp_parser (1.7.0)
     responders (3.0.0)
       actionpack (>= 5.0)
       railties (>= 5.0)
+    rinku (1.7.3)
     ruby_dep (1.5.0)
     rubyzip (2.3.0)
     sass-rails (6.0.0)
@@ -192,6 +200,7 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.4.2)
+    tag_helper (0.5.0)
     thor (1.0.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
@@ -231,6 +240,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  auto_html
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)

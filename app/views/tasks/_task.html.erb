@@ -1,19 +1,4 @@
-<!--		
-		<tr>
-			<td><%= task.content %></td>
-			<td><%= task.state %></td>
-			<td><%= link_to 'Show ', task_path(task) %></td>
-			<td><%= link_to 'Edit', edit_task_path(task) %></td>
-			<td><%= link_to 'Delete', task_path(task), method: :delete, 
-			data: {confirm: "Are you sure want to delete this task?"} %></td>
-			<% if task.state == 'doing' %>
-				<td><%= link_to 'Mark as To Do', change_task_path(task, state: 'to_do'), method: :put %></td>
-				<td><%= link_to 'Mark as Done', change_task_path(task, state: 'done'), method: :put %></td>
-			<% else %>
-				<td><%= link_to 'Mark as Doing', change_task_path(task, state: 'doing'), method: :put %></td>
-			<% end %>
-		</tr>
--->
+
 
   		<div class="panel panel-info">
   			<div class="panel-heading">
@@ -23,7 +8,7 @@
 			data: {confirm: "Are you sure want to delete this task?"}, class: 'pull-right' %>
   				 <% end %>
   			</div>
-  				<div class="panel-body"><%= task.content %></div>
+  				<div class="panel-body"><%= raw(task.content) %></div>
   					<div class="panel-footer">
   						<div class="btn-group btn-group-justified">
 						<% if task.state == 'doing' %>
