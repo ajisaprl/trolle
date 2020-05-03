@@ -15,40 +15,34 @@ class TasksController < ApplicationController
 	def create
 		@task = current_user.tasks.new(tasks_params)
 		if @task.save
-			flash[:notice] = "Task created!"
-			redirect_to task_path(@task)
+			flash[:success] = "Task created!"
+			redirect_to tasks_path(@task)
 		else
 			render 'new'
 		end
 	end
 
-	def edit
-		
-	end
-
 	def update
-		
 		if @task.update(tasks_params)
-			flash[:notice] = 'Task was successfully updated'
-			redirect_to task_path(@task)
+			flash[:success] = 'Task '
+			redirect_to tasks_path(@task)
 		else
 			render 'edit'
 		end
 	end
 
-	def show
-		
-	end
-
 	def destroy
 		@task.destroy
-		flash[:notice] = 'Task was successfully deleted'
+		flash[:danger] = 'Task was successfully deleted'
 		redirect_to tasks_path
 	end
 
 	def change
 		@task.update_attributes(state: params[:state])
-		flash[:notice] = 'Task state updated'
+		if @task.state == 'to_do'
+			@task.state = 'To Do'
+		end
+		flash[:success] = 'Task updated to ' + @task.state
 		redirect_to tasks_path
 	end
 
